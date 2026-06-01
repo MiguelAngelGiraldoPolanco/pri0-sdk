@@ -17,9 +17,7 @@ jobs:
         run: pip install poetry
 
       - name: Install dependencies
-        # Esto instala tus librerías definidas en pyproject.toml
-        run: poetry install 
+        run: poetry install --with dev
 
       - name: Run tests
-        # Esto ejecuta tus tests usando el entorno virtual de poetry
         run: poetry run pytest tests/
