@@ -13,6 +13,7 @@ class Sanitizer:
             "IP_ADDRESS": r"\b(?:\d{1,3}\.){3}\d{1,3}\b",
             "CREDIT_CARD": r"\b(?:\d[ -]*?){13,16}\b",
         }
+        self.validate_patterns()
 
     def mask(self, text: str, countries: list = None, include: list = None) -> str:
 
@@ -41,3 +42,17 @@ class Sanitizer:
 
     def _apply_ai_masking(self, text: str) -> str:
         return text + " (Inteligencia aplicada)"
+
+    def validate_patterns(self):
+
+        all_patterns = self.common_patterns.copy()
+        for provider in self.providers_patterns.values():
+            all_patterns.update(provider.get_patterns())
+
+        for label, pattern in all_patterns.items():
+            try:
+                re.compile(pattern)
+            except re.error:
+                raise ValueError(f"The pattern for '{label}' is invalid: {pattern}")
+
+        return True
