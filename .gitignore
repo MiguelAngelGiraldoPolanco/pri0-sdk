@@ -102,3 +102,6 @@ ENV/
 
 # Idea IDE
 .idea/
+
+# Poetry cache
+.cache/pypoetry/
