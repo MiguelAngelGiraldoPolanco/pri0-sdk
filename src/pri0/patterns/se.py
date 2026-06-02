@@ -1,4 +1,10 @@
-class SEPatterns:
+from .base import BaseCountryProvider
+
+
+# Sweden (SE) patterns provider
+class SEPatterns(BaseCountryProvider):
+    code = "SE"
+
     def __init__(self):
         self.patterns = {
             "SE_PERSONNUMMER": r"\b[0-9]{6}[-+][0-9]{4}\b",

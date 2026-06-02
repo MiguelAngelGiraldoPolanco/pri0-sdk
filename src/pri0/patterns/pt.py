@@ -1,4 +1,10 @@
-class PTPatterns:
+from .base import BaseCountryProvider
+
+
+# Portugal (PT) patterns provider
+class PTPatterns(BaseCountryProvider):
+    code = "PT"
+
     def __init__(self):
         self.patterns = {
             "PT_NIF": r"\b[123456789][0-9]{8}\b",

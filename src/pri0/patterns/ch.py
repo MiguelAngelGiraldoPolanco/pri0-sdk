@@ -1,4 +1,10 @@
-class CHPatterns:
+from .base import BaseCountryProvider
+
+
+# Switzerland (CH) patterns provider
+class CHPatterns(BaseCountryProvider):
+    code = "CH"
+
     def __init__(self):
         self.patterns = {
             "CH_AHV": r"\b756\.[0-9]{4}\.[0-9]{4}\.[0-9]{2}\b",

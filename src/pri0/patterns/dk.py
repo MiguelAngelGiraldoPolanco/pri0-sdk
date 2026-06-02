@@ -1,4 +1,10 @@
-class DKPatterns:
+from .base import BaseCountryProvider
+
+
+# Denmark (DK) patterns provider
+class DKPatterns(BaseCountryProvider):
+    code = "DK"
+
     def __init__(self):
         self.patterns = {
             "DK_CPR": r"\b(?:0[1-9]|[12][0-9]|3[01])(?:0[1-9]|1[0-2])[0-9]{2}-[0-9]{4}\b",

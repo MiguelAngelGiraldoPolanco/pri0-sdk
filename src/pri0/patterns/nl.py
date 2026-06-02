@@ -1,4 +1,10 @@
-class NLPatterns:
+from .base import BaseCountryProvider
+
+
+# Netherlands (NL) patterns provider
+class NLPatterns(BaseCountryProvider):
+    code = "NL"
+
     def __init__(self):
         self.patterns = {
             "NL_BSN": r"\b[0-9]{9}\b",

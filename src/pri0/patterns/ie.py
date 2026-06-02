@@ -1,4 +1,10 @@
-class IEPatterns:
+from .base import BaseCountryProvider
+
+
+# Ireland (IE) patterns provider
+class IEPatterns(BaseCountryProvider):
+    code = "IE"
+
     def __init__(self):
         self.patterns = {
             "IE_PPS": r"\b[0-9]{7}[A-Z]{1,2}\b",

@@ -1,4 +1,10 @@
-class BEPatterns:
+from .base import BaseCountryProvider
+
+
+# Belgium (BE) patterns provider
+class BEPatterns(BaseCountryProvider):
+    code = "BE"
+
     def __init__(self):
         self.patterns = {
             "BE_RRN": r"\b[0-9]{2}\.[0-9]{2}\.[0-9]{2}-[0-9]{3}\.[0-9]{2}\b",

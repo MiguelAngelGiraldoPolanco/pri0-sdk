@@ -1,4 +1,10 @@
-class PLPatterns:
+from .base import BaseCountryProvider
+
+
+# Poland (PL) patterns provider
+class PLPatterns(BaseCountryProvider):
+    code = "PL"
+
     def __init__(self):
         self.patterns = {
             "PL_PESEL": r"\b[0-9]{2}(?:0[1-9]|1[0-2]|2[1-9]|3[0-2])[0-9]{2}[0-9]{5}\b",

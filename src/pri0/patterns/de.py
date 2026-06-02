@@ -1,4 +1,10 @@
-class DEPatterns:
+from .base import BaseCountryProvider
+
+
+# Germany (DE) patterns provider
+class DEPatterns(BaseCountryProvider):
+    code = "DE"
+
     def __init__(self):
         self.patterns = {
             # (Sozialversicherungsnummer)

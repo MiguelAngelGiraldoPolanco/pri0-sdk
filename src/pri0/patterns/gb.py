@@ -1,4 +1,10 @@
-class GBPatterns:
+from .base import BaseCountryProvider
+
+
+# United Kingdom (GB) patterns provider
+class GBPatterns(BaseCountryProvider):
+    code = "GB"
+
     def __init__(self):
         self.patterns = {
             "GB_NINO": r"\b[A-CEGHJ-PR-TW-Z][A-CEGHJ-NPR-TW-Z][0-9]{6}[A-D]\b",

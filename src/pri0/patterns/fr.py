@@ -1,4 +1,10 @@
-class FRPatterns:
+from .base import BaseCountryProvider
+
+
+# France (FR) patterns provider
+class FRPatterns(BaseCountryProvider):
+    code = "FR"
+
     def __init__(self):
         self.patterns = {
             "FR_INSEE": r"\b[12][0-9]{2}(?:0[1-9]|1[0-2]|20)[0-9]{2}[0-9]{3}[0-9]{3}[0-9]{2}\b",
