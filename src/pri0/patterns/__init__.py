@@ -1,2 +1,3 @@
-from . import be, ch, de, dk, es, fr, gb, ie, nl, pl, pt, se
+from . import countries
 from .base import BaseCountryProvider
+from .commonProvider import CommonProvider
