@@ -13,15 +13,10 @@ class CommonProvider(BaseCountryProvider):
         "COMMON_CREDIT_CARD": r"\b(?:\d[\s-]*?){13,16}\b",
     }
 
-    def __init__(self):
-        print("DEBUG: CommonProvider ha sido instanciado")
-        super().__init__()
-
     def get_patterns(self):
         return self.patterns
 
     def validate_checksum(self, label, value):
-        print(f"DEBUG: Validando {label} -> Valor original: '{value}'")
         clean_value = value.strip(" ,.!?;:\"'()[]{}<>")
 
         if label == "COMMON_CREDIT_CARD":
